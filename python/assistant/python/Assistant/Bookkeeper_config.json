@@ -1,0 +1,10 @@
+[
+  {
+    "FunName": "AccontDetail",
+    "Commnet": "账户详单"
+  },
+  {
+    "FunName": "FinancialProductAccontDetail",
+    "Commnet": "理财产品详单"
+  }
+]

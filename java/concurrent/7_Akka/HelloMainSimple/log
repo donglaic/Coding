@@ -1,0 +1,121 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------------< [0;36mcom.delay:HelloMainSimple[0;1m >----------------------[m
+[[1;34mINFO[m] [1mBuilding HelloMainSimple 1.0-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mHelloMainSimple[0;1m ---[m
+[[1;34mINFO[m] Deleting /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mHelloMainSimple[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.5.1:compile[m [1m(default-compile)[m @ [36mHelloMainSimple[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 3 source files to /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/target/classes
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;31mERROR[m] COMPILATION ERROR : 
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[4,18] cannot find symbol
+  symbol:   class UntypedActor
+  location: package akka.actor
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[6,33] cannot find symbol
+  symbol: class UntypedActor
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/Greeter.java:[5,30] cannot find symbol
+  symbol: class UntypedActor
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloMainSimple.java:[14,65] cannot find symbol
+  symbol:   variable ConfigFactory
+  location: class com.delay.HelloMainSimple
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[9,9] method does not override or implement a method from a supertype
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[11,48] cannot find symbol
+  symbol:   variable Props
+  location: class com.delay.HelloWorld
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[11,27] cannot find symbol
+  symbol:   method getContext()
+  location: class com.delay.HelloWorld
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[13,48] cannot find symbol
+  symbol:   method getSelf()
+  location: class com.delay.HelloWorld
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[16,9] method does not override or implement a method from a supertype
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[19,56] cannot find symbol
+  symbol:   method getSelf()
+  location: class com.delay.HelloWorld
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[20,43] cannot find symbol
+  symbol:   method getSelf()
+  location: class com.delay.HelloWorld
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[20,25] cannot find symbol
+  symbol:   method getContext()
+  location: class com.delay.HelloWorld
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[22,25] cannot find symbol
+  symbol:   method unhandled(java.lang.Object)
+  location: class com.delay.HelloWorld
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/Greeter.java:[10,9] method does not override or implement a method from a supertype
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/Greeter.java:[14,51] cannot find symbol
+  symbol:   method getSelf()
+  location: class com.delay.Greeter
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/Greeter.java:[14,25] cannot find symbol
+  symbol:   method getSender()
+  location: class com.delay.Greeter
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/Greeter.java:[16,25] cannot find symbol
+  symbol:   method unhandled(java.lang.Object)
+  location: class com.delay.Greeter
+[[1;34mINFO[m] 17 errors 
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  6.491 s
+[[1;34mINFO[m] Finished at: 2019-06-20T08:47:00+08:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-compiler-plugin:3.5.1:compile[m [1m(default-compile)[m on project [36mHelloMainSimple[m: [1;31mCompilation failure[m: Compilation failure: 
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[4,18] cannot find symbol
+[[1;31mERROR[m]   symbol:   class UntypedActor
+[[1;31mERROR[m]   location: package akka.actor
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[6,33] cannot find symbol
+[[1;31mERROR[m]   symbol: class UntypedActor
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/Greeter.java:[5,30] cannot find symbol
+[[1;31mERROR[m]   symbol: class UntypedActor
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloMainSimple.java:[14,65] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable ConfigFactory
+[[1;31mERROR[m]   location: class com.delay.HelloMainSimple
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[9,9] method does not override or implement a method from a supertype
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[11,48] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable Props
+[[1;31mERROR[m]   location: class com.delay.HelloWorld
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[11,27] cannot find symbol
+[[1;31mERROR[m]   symbol:   method getContext()
+[[1;31mERROR[m]   location: class com.delay.HelloWorld
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[13,48] cannot find symbol
+[[1;31mERROR[m]   symbol:   method getSelf()
+[[1;31mERROR[m]   location: class com.delay.HelloWorld
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[16,9] method does not override or implement a method from a supertype
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[19,56] cannot find symbol
+[[1;31mERROR[m]   symbol:   method getSelf()
+[[1;31mERROR[m]   location: class com.delay.HelloWorld
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[20,43] cannot find symbol
+[[1;31mERROR[m]   symbol:   method getSelf()
+[[1;31mERROR[m]   location: class com.delay.HelloWorld
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[20,25] cannot find symbol
+[[1;31mERROR[m]   symbol:   method getContext()
+[[1;31mERROR[m]   location: class com.delay.HelloWorld
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/HelloWorld.java:[22,25] cannot find symbol
+[[1;31mERROR[m]   symbol:   method unhandled(java.lang.Object)
+[[1;31mERROR[m]   location: class com.delay.HelloWorld
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/Greeter.java:[10,9] method does not override or implement a method from a supertype
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/Greeter.java:[14,51] cannot find symbol
+[[1;31mERROR[m]   symbol:   method getSelf()
+[[1;31mERROR[m]   location: class com.delay.Greeter
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/Greeter.java:[14,25] cannot find symbol
+[[1;31mERROR[m]   symbol:   method getSender()
+[[1;31mERROR[m]   location: class com.delay.Greeter
+[[1;31mERROR[m] /home/pi/Coding/java/concurrent/7_Akka/HelloMainSimple/src/main/java/com/delay/Greeter.java:[16,25] cannot find symbol
+[[1;31mERROR[m]   symbol:   method unhandled(java.lang.Object)
+[[1;31mERROR[m]   location: class com.delay.Greeter
+[[1;31mERROR[m] -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+<div id="totalContainer" style="height: 100%">
+  <div id="buttonContainer" style="height: 5%;">
+    <input type="file" id="files" style="display: none" onchange="fileImport();">
+    <input type="button" id="fileImport" value="Upload">
+    <input type="button" id="range" value="Range" onclick="buttonRangeOnClick()">
+    <input type="button" id="RuleA" value="RuleA" onclick="buttonOnClick(this)">
+    <input type="button" id="RuleB" value="RuleB" onclick="buttonOnClick(this)">
+    <input type="button" id="RuleC" value="RuleC" onclick="buttonOnClick(this)">
+    <input type="button" id="RuleD" value="RuleD" onclick="buttonOnClick(this)">
+    <input type="button" id="RuleE" value="RuleE" onclick="buttonOnClick(this)">
+    <input type="button" id="Goto" value="Goto" onclick="buttonOnGotoClick(this)">
+    <input type="button" id="Find" value="Find" onclick="buttonOnFindClick(this)">
+    <input type="button" id="refresh" value="Refresh" onclick="buttonRefreshOnClick()">
+  </div>
+  <div id="echartsContainer" style="height: 95%"></div>
+</div>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script>
+  var buttonDic = new Array();
+  var range_b = 0;
+  var range_e = 100;
+  var find_text;
+
+  //点击导入按钮,使files触发点击事件,然后完成读取文件的操作
+  $("#fileImport").click(function () {
+    $("#files").click();
+  })
+
+  function buttonRangeOnClick() {
+    var user_input=prompt("Range",range_b + " - " + range_e);
+    range_b = user_input.split(" - ")[0];
+    range_e = user_input.split(" - ")[1];
+  }
+
+  function buttonOnGotoClick(id) {
+    var user_input=prompt(id.value,"");
+  }
+
+  function buttonOnFindClick(id) {
+    var user_input=prompt(id.value,find_text);
+    if (user_input!=null && user_input!=""){
+      find_text = user_input;
+    }
+  }
+
+  function buttonRefreshOnClick() {
+
+  }
+
+  function fileImport() {
+    //获取读取我文件的File对象
+    var selectedFile = document.getElementById('files').files[0];
+    var name = selectedFile.name;//读取选中文件的文件名
+    var size = selectedFile.size;//读取选中文件的大小
+    console.log("文件名:"+name+"大小:"+size);
+
+    var reader = new FileReader();//这是核心,读取操作就是由它完成.
+    //reader.readAsText(selectedFile);//读取文件的内容,也可以读取文件的URL
+    reader.onload = function () {
+      //当读取完成后回调这个函数,然后此时文件的内容存储到了result中,直接操作即可
+      console.log(this.result);
+    }
+  }
+
+  function buttonOnClick(id){
+    var x;
+    var user_input=prompt(id.value,buttonDic[id.value]);
+    if (user_input!=null && user_input!=""){
+      buttonDic[id.value] = user_input;
+    }
+  }
+</script>
+
+<script type="text/javascript" src="js/echarts.min.js"></script>
+<script type="text/javascript" src="js/echarts-gl.min.js"></script>
+<script type="text/javascript" src="js/ecStat.min.js"></script>
+<script type="text/javascript" src="js/dataTool.min.js"></script>
+<script type="text/javascript" src="js/china.js"></script>
+<script type="text/javascript" src="js/world.js"></script>
+<script type="text/javascript" src="js/bmap.min.js"></script>
+<script type="text/javascript" src="js/simplex.js"></script>
+<script type="text/javascript">
+
+  var dom = document.getElementById("echartsContainer");
+  var myChart = echarts.init(dom,'dark');
+  var app = {};
+  option = null;
+
+  var data = [];
+  var dataCount = 10;
+  var startTime = +new Date();
+  var categories = ['categoryA', 'categoryB', 'categoryC','categoryD','categoryE'];
+  var types = [
+    {name: 'JS Heap', color: '#7b9ce1'},
+    {name: 'Documents', color: '#bd6d6c'},
+    {name: 'Nodes', color: '#75d874'},
+    {name: 'Listeners', color: '#e0bc78'},
+    {name: 'GPU Memory', color: '#dc77dc'},
+    {name: 'GPU', color: '#72b362'}
+  ];
+
+  // Generate mock data
+  echarts.util.each(categories, function (category, index) {
+    var baseTime = startTime;
+    for (var i = 0; i < dataCount; i++) {
+      var typeItem = types[Math.round(Math.random() * (types.length - 1))];
+      var duration = 100;//Math.round(Math.random() * 1000);
+      data.push({
+        name: typeItem.name,
+        value: [
+          index,
+          baseTime,
+          baseTime += duration,
+          duration,
+          i
+        ],
+        itemStyle: {
+          normal: {
+            color: typeItem.color
+          }
+        }
+      });
+      baseTime += Math.round(Math.random() * 2000);
+    }
+  });
+
+  function renderItem(params, api) {
+    var categoryIndex = api.value(0);
+    var start = api.coord([api.value(1), categoryIndex]);
+    var end = api.coord([api.value(2), categoryIndex]);
+    var height = api.size([0, 1])[1] * 0.6;
+
+    var rectShape = echarts.graphic.clipRectByRect({
+      x: start[0],
+      y: start[1] - height / 2,
+      width: end[0] - start[0],
+      height: height
+    }, {
+      x: params.coordSys.x,
+      y: params.coordSys.y,
+      width: params.coordSys.width,
+      height: params.coordSys.height
+    });
+
+    return rectShape && {
+      type: 'rect',
+      shape: rectShape,
+      style: api.style()
+    };
+  }
+
+
+  option = {
+    tooltip: {
+      formatter: function (params) {
+        return params.marker + params.name + ': ' + params.value[4] + ' ms HELLO DELAY';
+      }
+    },
+    title: {
+      text: 'Profile',
+      left: 'center'
+    },
+    dataZoom: [{
+      type: 'slider',
+      filterMode: 'weakFilter',
+      showDataShadow: false,
+      top: 400,
+      height: 10,
+      borderColor: 'transparent',
+      backgroundColor: '#e2e2e2',
+      handleIcon: 'M10.7,11.9H9.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4h1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7v-1.2h6.6z M13.3,22H6.7v-1.2h6.6z M13.3,19.6H6.7v-1.2h6.6z', // jshint ignore:line
+      handleSize: 20,
+      handleStyle: {
+        shadowBlur: 6,
+        shadowOffsetX: 1,
+        shadowOffsetY: 2,
+        shadowColor: '#aaa'
+      },
+      labelFormatter: ''
+    }, {
+      type: 'inside',
+      filterMode: 'weakFilter'
+    }],
+    grid: {
+      height:300
+    },
+    xAxis: {
+      min: startTime,
+      scale: true,
+      axisLabel: {
+        formatter: function (val) {
+          return Math.max(0, val - startTime) + ' ms';
+        }
+      },
+
+    },
+    yAxis: {
+      data: categories
+    },
+    series: [{
+      type: 'custom',
+      renderItem: renderItem,
+      itemStyle: {
+        normal: {
+          opacity: 0.8
+        }
+      },
+      encode: {
+        x: [1, 2],
+        y: 0
+      },
+      data: data
+    }]
+  };;
+  if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+    myChart.on('click', function (params) {
+      window.open('https://www.baidu.com/s?wd=' + encodeURIComponent(params.name));
+    });
+  }
+</script>
+</body>
+</html>

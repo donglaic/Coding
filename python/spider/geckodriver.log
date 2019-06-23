@@ -1,0 +1,47 @@
+1555297686278	geckodriver	INFO	Listening on 127.0.0.1:37495
+1555297687578	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.hDiFNpBrc7VX
+1555297687582	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args []
+1555297687600	geckodriver::marionette	INFO	Connecting to Marionette on localhost:42277
+1555297696326	Marionette	INFO	Listening on port 42277
+1555297703066	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/plugins/every_cookie_4644b13.js, line 4: ReferenceError: c is not defined
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 106: TypeError: this._recipeManager is null
+ExceptionHandler::GenerateDump cloned child 4032
+ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+[Parent 3078] WARNING: pipe error (60): Connection reset by peer: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 322
+
+###!!! [Parent][RunMessage] Error: Channel error: cannot send/recv
+
+
+###!!! [Parent][RunMessage] Error: Channel error: cannot send/recv
+
+
+###!!! [Parent][RunMessage] Error: Channel error: cannot send/recv
+
+
+###!!! [Parent][RunMessage] Error: Channel error: cannot send/recv
+
+
+###!!! [Parent][RunMessage] Error: Channel error: cannot send/recv
+
+
+###!!! [Parent][RunMessage] Error: Channel error: cannot send/recv
+
+console.error: 
+  Message: Error: SessionFile is closed
+  Stack:
+    SessionFileInternal.write@resource://app/modules/sessionstore/SessionFile.jsm:315:29
+this.SessionFile.write@resource://app/modules/sessionstore/SessionFile.jsm:76:12
+SessionSaverInternal._writeState@resource://app/modules/sessionstore/SessionSaver.jsm:259:12
+SessionSaverInternal._saveState@resource://app/modules/sessionstore/SessionSaver.jsm:230:12
+SessionSaverInternal._saveStateAsync@resource://app/modules/sessionstore/SessionSaver.jsm:243:5
+SessionSaverInternal.runDelayed/this._timeoutID<@resource://app/modules/sessionstore/SessionSaver.jsm:147:40
+setTimeout_timer@resource://gre/modules/Timer.jsm:30:5
+
