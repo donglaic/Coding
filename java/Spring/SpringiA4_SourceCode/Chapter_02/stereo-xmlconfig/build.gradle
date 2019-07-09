@@ -2,6 +2,12 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 
+
+repositories {
+	maven {
+				url "http://maven.aliyun.com/nexus/content/groups/public"
+		}
+}
 jar {
     baseName = 'stereo-xmlconfig'
     version =  '0.0.1-SNAPSHOT'

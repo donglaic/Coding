@@ -2,6 +2,12 @@ apply plugin: 'eclipse'
 apply plugin: 'java'
 
 dependencies {
+
+repositories {
+	maven {
+				url "http://maven.aliyun.com/nexus/content/groups/public"
+		}
+}
 	compile "org.springframework:spring-context:$springVersion"
 	compile "org.springframework.amqp:spring-amqp:$springAMQPVersion"
 	compile "org.springframework.amqp:spring-rabbit:$springAMQPVersion"

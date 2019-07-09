@@ -2,6 +2,12 @@ apply plugin: 'eclipse'
 apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
 
+
+repositories {
+	maven {
+				url "http://maven.aliyun.com/nexus/content/groups/public"
+		}
+}
 dependencies {
     compile "org.springframework:spring-webmvc:$springVersion"
     compile "org.springframework:spring-jdbc:$springVersion"

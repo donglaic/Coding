@@ -3,6 +3,12 @@ buildscript {
 		mavenCentral()
 	}
 
+repositories {
+	maven {
+				url "http://maven.aliyun.com/nexus/content/groups/public"
+		}
+}
+
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.4.RELEASE")
 	}

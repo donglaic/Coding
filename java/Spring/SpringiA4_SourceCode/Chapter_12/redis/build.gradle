@@ -2,6 +2,12 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 
 repositories {
+
+repositories {
+	maven {
+				url "http://maven.aliyun.com/nexus/content/groups/public"
+		}
+}
     mavenCentral()
 }
 
