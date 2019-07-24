@@ -1,0 +1,13 @@
+com/myapp/DevDataSourceTest.class
+com/myapp/DevDataSourceTest$1.class
+com/myapp/ProductionDataSourceTest.class
+profiles/DataSourceConfigTest$DevDataSourceTest.class
+profiles/DataSourceConfigTest$DevDataSourceTest_XMLConfig.class
+profiles/DataSourceConfigTest$ProductionDataSourceTest_XMLConfig.class
+profiles/DataSourceConfigTest$DevDataSourceTest_XMLConfig$1.class
+profiles/DataSourceConfigTest.class
+com/myapp/DevDataSource_XMLConfigTest$1.class
+profiles/DataSourceConfigTest$DevDataSourceTest$1.class
+profiles/DataSourceConfigTest$ProductionDataSourceTest.class
+com/myapp/DevDataSource_XMLConfigTest.class
+com/myapp/ProductionDataSource_XMLConfigTest.class

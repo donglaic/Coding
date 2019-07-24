@@ -1,0 +1,9 @@
+com/myapp/XMLConfigScopedBeanTest.class
+com/myapp/ExplicitConfigScopedBeanTest.class
+com/myapp/ScopedBeanTests$ExplicitConfigScopedBeanTest.class
+com/myapp/ScopedBeanTests.class
+com/myapp/ScopedBeanTests$ComponentScannedScopedBeanTest.class
+com/myapp/ScopedBeanTests$XMLConfigScopedBeanTest.class
+com/myapp/ExplicitConfig.class
+com/myapp/ComponentScannedConfig.class
+com/myapp/ComponentScannedScopedBeanTest.class
