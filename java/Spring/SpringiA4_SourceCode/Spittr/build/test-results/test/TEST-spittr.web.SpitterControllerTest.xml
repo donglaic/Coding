@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="spittr.web.SpitterControllerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-07-29T03:23:54" hostname="Laptop" time="1.522">
+  <properties/>
+  <testcase name="shouldShowRegistration" classname="spittr.web.SpitterControllerTest" time="1.035"/>
+  <testcase name="shouldFailValidationWithNoData" classname="spittr.web.SpitterControllerTest" time="0.331"/>
+  <testcase name="shouldProcessRegistration" classname="spittr.web.SpitterControllerTest" time="0.155"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Jul 29, 2019 11:23:55 AM org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping registerHandlerMethod
+INFO: Mapped "{[/spitter/register],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String spittr.web.SpitterController.showRegistrationForm()
+Jul 29, 2019 11:23:55 AM org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping registerHandlerMethod
+INFO: Mapped "{[/spitter/register],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String spittr.web.SpitterController.processRegistration(spittr.Spitter,org.springframework.validation.Errors)
+Jul 29, 2019 11:23:55 AM org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping registerHandlerMethod
+INFO: Mapped "{[/spitter/{username}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String spittr.web.SpitterController.showSpitterProfile(java.lang.String,org.springframework.ui.Model)
+Jul 29, 2019 11:23:55 AM org.hibernate.validator.internal.util.Version <clinit>
+INFO: HV000001: Hibernate Validator 5.0.1.Final
+Jul 29, 2019 11:23:55 AM org.springframework.mock.web.MockServletContext log
+INFO: Initializing Spring FrameworkServlet ''
+Jul 29, 2019 11:23:55 AM org.springframework.test.web.servlet.TestDispatcherServlet initServletBean
+INFO: FrameworkServlet '': initialization started
+Jul 29, 2019 11:23:55 AM org.springframework.test.web.servlet.TestDispatcherServlet initServletBean
+INFO: FrameworkServlet '': initialization completed in 3 ms
+Jul 29, 2019 11:23:55 AM org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping registerHandlerMethod
+INFO: Mapped "{[/spitter/register],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String spittr.web.SpitterController.showRegistrationForm()
+Jul 29, 2019 11:23:55 AM org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping registerHandlerMethod
+INFO: Mapped "{[/spitter/register],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String spittr.web.SpitterController.processRegistration(spittr.Spitter,org.springframework.validation.Errors)
+Jul 29, 2019 11:23:55 AM org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping registerHandlerMethod
+INFO: Mapped "{[/spitter/{username}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String spittr.web.SpitterController.showSpitterProfile(java.lang.String,org.springframework.ui.Model)
+Jul 29, 2019 11:23:55 AM org.springframework.mock.web.MockServletContext log
+INFO: Initializing Spring FrameworkServlet ''
+Jul 29, 2019 11:23:55 AM org.springframework.test.web.servlet.TestDispatcherServlet initServletBean
+INFO: FrameworkServlet '': initialization started
+Jul 29, 2019 11:23:55 AM org.springframework.test.web.servlet.TestDispatcherServlet initServletBean
+INFO: FrameworkServlet '': initialization completed in 1 ms
+Jul 29, 2019 11:23:56 AM org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping registerHandlerMethod
+INFO: Mapped "{[/spitter/register],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String spittr.web.SpitterController.showRegistrationForm()
+Jul 29, 2019 11:23:56 AM org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping registerHandlerMethod
+INFO: Mapped "{[/spitter/register],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String spittr.web.SpitterController.processRegistration(spittr.Spitter,org.springframework.validation.Errors)
+Jul 29, 2019 11:23:56 AM org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping registerHandlerMethod
+INFO: Mapped "{[/spitter/{username}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String spittr.web.SpitterController.showSpitterProfile(java.lang.String,org.springframework.ui.Model)
+Jul 29, 2019 11:23:56 AM org.springframework.mock.web.MockServletContext log
+INFO: Initializing Spring FrameworkServlet ''
+Jul 29, 2019 11:23:56 AM org.springframework.test.web.servlet.TestDispatcherServlet initServletBean
+INFO: FrameworkServlet '': initialization started
+Jul 29, 2019 11:23:56 AM org.springframework.test.web.servlet.TestDispatcherServlet initServletBean
+INFO: FrameworkServlet '': initialization completed in 0 ms
+]]></system-err>
+</testsuite>
