@@ -10,8 +10,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import tacos.data.IngredientRepository;
+import tacos.data.OrderRepository;
+import tacos.data.TacoRepository;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest   // <1>
@@ -19,6 +23,15 @@ public class HomeControllerTest {
 
   @Autowired
   private MockMvc mockMvc;   // <2>
+
+  @MockBean
+  private IngredientRepository ingredientRepository;
+
+  @MockBean
+  private TacoRepository tacoRepository;
+
+  @MockBean
+  private OrderRepository orderRepository;
 
   @Test
   public void testHomePage() throws Exception {

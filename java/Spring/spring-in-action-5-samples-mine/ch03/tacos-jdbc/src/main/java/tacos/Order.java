@@ -9,12 +9,17 @@ import org.hibernate.validator.constraints.CreditCardNumber;
 
 import lombok.Data;
 
+import java.util.Date;
+import java.util.List;
+
 @Data
 public class Order {
 
   private Long id;
 
-  private Data placedAt;
+  private Date placedAt;
+
+  private List<Taco> tacos;
 
   //end::allButValidation[]
   @NotBlank(message="Name is required")
@@ -56,6 +61,9 @@ public class Order {
   @Digits(integer=3, fraction=0, message="Invalid CVV")
   //tag::allButValidation[]
   private String ccCVV;
+
+  public void addDesign(Taco saved) {
+  }
 
 }
 //end::allButValidation[]

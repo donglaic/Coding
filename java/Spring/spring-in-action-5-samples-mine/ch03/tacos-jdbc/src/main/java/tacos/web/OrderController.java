@@ -12,45 +12,38 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.support.SessionStatus;
 import tacos.Order;
+import tacos.data.OrderRepository;
 
 @Slf4j
 @Controller
 @RequestMapping("/orders")
 public class OrderController {
+
+  private OrderRepository orderRepository;
+
+  public OrderController(OrderRepository orderRepository){
+    this.orderRepository = orderRepository;
+  }
   
-//end::baseClass[]
-//tag::orderForm[]
   @GetMapping("/current")
   public String orderForm(Model model) {
     model.addAttribute("order", new Order());
     return "orderForm";
   }
-//end::orderForm[]
 
-/*
-//tag::handlePost[]
   @PostMapping
-  public String processOrder(Order order) {
-    log.info("Order submitted: " + order);
-    return "redirect:/";
-  }
-//end::handlePost[]
-*/
-  
-//tag::handlePostWithValidation[]
-  @PostMapping
-  public String processOrder(@Valid Order order, Errors errors) {
+  public String processOrder(@Valid Order order, Errors errors,
+                             SessionStatus sessionStatus) {
     if (errors.hasErrors()) {
       return "orderForm";
     }
+
+    orderRepository.save(order);
+    sessionStatus.setComplete();
     
-    log.info("Order submitted: " + order);
     return "redirect:/";
   }
-//end::handlePostWithValidation[]
-  
-//tag::baseClass[]
-  
+
 }
-//end::baseClass[]
