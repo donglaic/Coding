@@ -13,35 +13,33 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+
+import tacos.data.TacoRepository;
 import tacos.data.IngredientRepository;
 import tacos.data.OrderRepository;
-import tacos.data.TacoRepository;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest   // <1>
+@WebMvcTest
 public class HomeControllerTest {
 
   @Autowired
-  private MockMvc mockMvc;   // <2>
-
+  private MockMvc mockMvc;
+  
   @MockBean
   private IngredientRepository ingredientRepository;
 
   @MockBean
-  private TacoRepository tacoRepository;
+  private TacoRepository designRepository;
 
   @MockBean
   private OrderRepository orderRepository;
 
   @Test
   public void testHomePage() throws Exception {
-    mockMvc.perform(get("/"))    // <3>
-    
-      .andExpect(status().isOk())  // <4>
-      
-      .andExpect(view().name("home"))  // <5>
-      
-      .andExpect(content().string(           // <6>
+    mockMvc.perform(get("/"))
+      .andExpect(status().isOk())
+      .andExpect(view().name("home"))
+      .andExpect(content().string(
           containsString("Welcome to...")));  
   }
 
