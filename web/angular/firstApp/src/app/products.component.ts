@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ProductService } from './product.service';
+import { ProductService } from "./products.service";
 
 @Component({
     selector:'products',
@@ -14,7 +14,7 @@ import { ProductService } from './product.service';
 export class ProductsComponent{
     products;
 
-    constructor(productService:ProductService){
-        this.products=productService.getProducts();
+    constructor(productsService:ProductService){
+        this.products=productsService.getProducts();
     }
 }
