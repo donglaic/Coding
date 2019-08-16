@@ -4,33 +4,33 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './products.component';
-import { ProductComponent } from './product.component';
-import { RatingComponent } from './rating.component';
-import { TruncatePipe } from './truncate.pipe';
-import { JumboTronComponent } from './jumbotron.component';
-import { UserFormComponent } from './user-form.component';
-import { LoginComponent } from './login.component';
 import { LoginService } from './login.service';
 import { HomeComponent } from './home.component';
 import { NotFoundComponent } from './notfound.component';
 import { routing } from './app.routing';
-import { ArtistComponent } from './artist.component';
+import { LoginComponent } from './login.component';
+import { AuthGuard } from './auth-guard.service';
+import { PreventUnsavedChangesGuard } from './prevent-unsaved-changes-guard.service';
+import { SpotifyModule } from './spotify/spotify.module';
+import { UserModule } from './users/user.module';
+import { spotifyRouting } from './spotify/spotify.routing';
 
 @NgModule({
   declarations: [
-    AppComponent,ProductsComponent,ProductComponent,RatingComponent,
-    TruncatePipe,JumboTronComponent,UserFormComponent,LoginComponent,
-    HomeComponent,NotFoundComponent,ArtistComponent
+    AppComponent,
+    HomeComponent,
+    NotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
-    ReactiveFormsModule,
-    routing
-  ],
-  providers: [LoginService],
+    SpotifyModule,
+    UserModule,
+    spotifyRouting,
+    routing,
+    ReactiveFormsModule
+  ], 
+  providers: [LoginService,AuthGuard,PreventUnsavedChangesGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
